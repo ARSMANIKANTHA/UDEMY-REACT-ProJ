@@ -5,16 +5,35 @@ import TasksList from "./component/TasksList";
 function App(){
     const [tasks,setTasks]= useState([]);
     function addTask(newTask){
-        if(tasks.includes(newTask)){
-            alert("Task already added!!")
-            return;
+        const updatedTasks = [...tasks,
+        {
+            taskId:tasks.length+100,
+            taskName:newTask
         }
-        const updatedTasks = [...tasks,newTask];
+        ];
         setTasks(updatedTasks);
     }
-    return <div>
+    const onDelete=(taskId)=>{
+        const updatedTasks = tasks.filter((task)=>{
+            return task.taskId!==taskId;
+        })
+        setTasks(updatedTasks);
+    }
+    const onEdit= (taskId,newTaskName) =>{
+        const updatedTasks = tasks.map((task)=>{
+            if(task.taskId === taskId ){
+                return {
+                    ...task,
+                    taskName:newTaskName
+                }
+            }
+            return task;
+        })
+        setTasks(updatedTasks);
+    }
+    return <div className="outer-app">
         <TaskBar addTask={addTask} />
-        <TasksList tasksList = {tasks} />
+        <TasksList tasksList = {tasks} onDelete={onDelete} onEdit={onEdit}/>
     </div>;
 }
 

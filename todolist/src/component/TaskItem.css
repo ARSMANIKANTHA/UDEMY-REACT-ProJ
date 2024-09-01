@@ -1,0 +1,26 @@
+.taskItem-outer{
+    height: 90%;
+    font-size: 1.2rem;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.3rem;
+}
+.taskItem-inner{
+    display: flex;
+    justify-content:space-around;
+    align-items: center;
+}
+.buttons{
+    display: flex;
+    gap: 1rem;
+}
+button{
+    height: 30px;
+    width: 80px;
+    background-color: lightsalmon;
+    outline-style: none;
+    color: white;
+    border: none;
+    border-radius: 0.3rem;
+}

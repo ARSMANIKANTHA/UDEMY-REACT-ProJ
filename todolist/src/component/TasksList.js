@@ -1,16 +1,14 @@
 import TaskItem from './TaskItem';
 import './TasksList.css';
-function TasksList({tasksList}){
-    let taskMap = tasksList.map((x,index) => {
+function TasksList({tasksList,onDelete,onEdit}){
+    let renderedTasks = tasksList.map((x) => {
         return (
-            <div  className='task-outer'>
-                <TaskItem key={index} task={x}/>
-            </div>
+                <TaskItem key={x.taskId} task={x} onDelete={onDelete} onEdit={onEdit}/>
         );
     })
     return (
-        <div>
-            {taskMap}
+        <div className='outer-taskslist'>
+            {renderedTasks}
         </div>
     );
 }

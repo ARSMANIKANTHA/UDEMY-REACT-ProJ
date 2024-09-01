@@ -1,4 +1,5 @@
 import {useState} from 'react';
+import './TaskBar.css';
 function TaskBar ({addTask}){
     const [task,setTask] = useState('');
     const onTaskChange = (event) =>{
@@ -10,16 +11,10 @@ function TaskBar ({addTask}){
         setTask('');
     }
     return (
-        <div>
+        <div className='taskBar-outer'>
             <form onSubmit={onTaskSubmit}>
-                <label><h4>Enter your task:</h4></label>
-                <input autoFocus value={task} onChange={onTaskChange} style={{
-                    height:"25px",
-                    border:"1px solid blue",
-                    borderRadius:"0.7rem",
-                    padding:"0 0.5rem",
-                    outlineStyle:"none"
-                }} placeholder="Enter Task..!" />
+                <label><h2>Enter your task</h2></label>
+                <input className='input' autoFocus value={task} onChange={onTaskChange} placeholder="Enter Task..!" />
             </form>
         </div>
     );
