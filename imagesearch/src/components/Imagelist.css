@@ -1,0 +1,9 @@
+.images-list{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    border: 2px solid brown;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    background-color: rgb(244, 244, 238);
+    margin: 1rem;
+}

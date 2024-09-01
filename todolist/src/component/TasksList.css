@@ -1,0 +1,11 @@
+.task-outer{
+    height: 25px;
+    min-width: 200px;
+    width: max-content;
+    background-color: beige;
+    margin: 0.3rem;
+    border-radius: 0.3rem;
+    padding: 0.2rem;
+    font-size: 0.9rem;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
