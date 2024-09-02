@@ -1,26 +1,43 @@
 .taskItem-outer{
     height: 90%;
     font-size: 1.2rem;
-    border: 1px solid black;
+    padding: 0.2rem;
     display: flex;
     flex-direction: column;
+    gap: 0.2rem;
     border-radius: 0.3rem;
+    background-color: pink;
 }
 .taskItem-inner{
+    padding: 0.3rem;
     display: flex;
-    justify-content:space-around;
+    justify-content:space-between;
     align-items: center;
 }
 .buttons{
     display: flex;
     gap: 1rem;
 }
-button{
-    height: 30px;
-    width: 80px;
-    background-color: lightsalmon;
-    outline-style: none;
-    color: white;
-    border: none;
+.task-name{
+    min-width: 2rem;
+    height: max-content;
+    width: 70%;
     border-radius: 0.3rem;
+    overflow-wrap: break-word;
+    font-weight: 600;
+    color: rgb(120, 5, 49);
+}
+.buttons button{
+    height: 35px;
+    width:80px;
+    background-color: rgb(156, 42, 233);
+    border: none;
+    color: white;
+    border-radius: 2rem;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+}
+.buttons button:hover{
+    background-color: rgb(106, 5, 173);
 }

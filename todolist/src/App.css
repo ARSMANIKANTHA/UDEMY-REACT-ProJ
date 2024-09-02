@@ -1,10 +1,8 @@
 .outer-app{
-    height: auto;
-    width: 100%;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
-    background-color: pink;
+    gap: 0.5rem;
 }

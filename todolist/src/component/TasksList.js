@@ -6,8 +6,13 @@ function TasksList({tasksList,onDelete,onEdit}){
                 <TaskItem key={x.taskId} task={x} onDelete={onDelete} onEdit={onEdit}/>
         );
     })
+    let notask;
+    if(renderedTasks<1){
+        notask = <p>No Tasks Added...!</p>;
+    }
     return (
         <div className='outer-taskslist'>
+            {notask}
             {renderedTasks}
         </div>
     );

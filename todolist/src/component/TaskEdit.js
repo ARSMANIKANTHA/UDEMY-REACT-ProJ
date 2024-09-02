@@ -12,7 +12,7 @@ function TaskEdit({task,onSubmit}){
     return (
         <div className='edit-outer'>
             <form onSubmit={handleSubmit}>
-                <input onChange={handleChange}/>
+                <input placeholder='Edit Here..' onChange={handleChange} autoFocus/>
                 <button>Save</button>
             </form>
         </div>

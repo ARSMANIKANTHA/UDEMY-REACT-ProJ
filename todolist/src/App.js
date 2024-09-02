@@ -1,10 +1,11 @@
 import { useState } from "react";
 import TaskBar from "./component/TaskBar";
 import TasksList from "./component/TasksList";
-
+import './App.css';
 function App(){
     const [tasks,setTasks]= useState([]);
     function addTask(newTask){
+        
         const updatedTasks = [...tasks,
         {
             taskId:tasks.length+100,
@@ -31,7 +32,7 @@ function App(){
         })
         setTasks(updatedTasks);
     }
-    return <div className="outer-app">
+    return <div className="outer-app" >
         <TaskBar addTask={addTask} />
         <TasksList tasksList = {tasks} onDelete={onDelete} onEdit={onEdit}/>
     </div>;

@@ -22,7 +22,7 @@ function TaskItem({task,onDelete,onEdit}){
     return(
         <div className="taskItem-outer">
             <div className="taskItem-inner">
-                <p>{task.taskName}</p>
+                <p className="task-name">{task.taskName}</p>
                 <div className="buttons">
                     <button onClick={handleEdit}>Edit</button>
                     <button onClick={handleDelete}>Delete</button>

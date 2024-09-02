@@ -7,14 +7,19 @@ function TaskBar ({addTask}){
     }
     const onTaskSubmit=(event) =>{
         event.preventDefault();
+        if(!task){
+            alert("Empty task");
+            return;
+        }
         addTask(task);
         setTask('');
     }
     return (
         <div className='taskBar-outer'>
+            <label><h2>TO-DO-LIST</h2></label>
             <form onSubmit={onTaskSubmit}>
-                <label><h2>Enter your task</h2></label>
                 <input className='input' autoFocus value={task} onChange={onTaskChange} placeholder="Enter Task..!" />
+                <button>Add</button>
             </form>
         </div>
     );
