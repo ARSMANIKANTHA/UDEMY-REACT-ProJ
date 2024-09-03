@@ -3,14 +3,14 @@ import TaskEdit from "./TaskEdit";
 import './TaskItem.css';
 function TaskItem({task,onDelete,onEdit}){
     const handleDelete = () =>{
-        onDelete(task.taskId);
+        onDelete(task.id);
     }
     const handleEdit = () =>{
         setShowEdit(!showEdit);
     }
-    const handleSubmit = (taskId,newValue) =>{
+    const handleSubmit = (id,newValue) =>{
         setShowEdit(!showEdit)
-        onEdit(taskId,newValue);
+        onEdit(id,newValue);
     }
     let editInput = "";
     let [showEdit,setShowEdit] = useState(false);

@@ -1,31 +1,40 @@
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import TaskBar from "./component/TaskBar";
 import TasksList from "./component/TasksList";
+import axios from "axios";
 import './App.css';
 function App(){
     const [tasks,setTasks]= useState([]);
-    function addTask(newTask){
-        
-        const updatedTasks = [...tasks,
-        {
-            taskId:tasks.length+100,
-            taskName:newTask
-        }
-        ];
+    useEffect(()=>{
+        loadTasks()
+    },[]);
+    const loadTasks = async () =>{
+        const response = await axios.get('http://localhost:3001/tasks');
+        setTasks(response.data);
+    }
+    const addTask = async (newTask) =>{
+        const response = await axios.post('http://localhost:3001/tasks',{
+            taskName:newTask,
+        });
+        const updatedTasks = [...tasks,response.data];
         setTasks(updatedTasks);
     }
-    const onDelete=(taskId)=>{
+    const onDelete= async (id)=>{
+        await axios.delete(`http://localhost:3001/tasks/${id}`);
         const updatedTasks = tasks.filter((task)=>{
-            return task.taskId!==taskId;
+            return task.id!==id;
         })
         setTasks(updatedTasks);
     }
-    const onEdit= (taskId,newTaskName) =>{
+    const onEdit=  async (id,newTaskName) =>{
+        const response = await axios.put(`http://localhost:3001/tasks/${id}`,{
+            taskName : newTaskName
+        });
         const updatedTasks = tasks.map((task)=>{
-            if(task.taskId === taskId ){
+            if(task.id === id ){
                 return {
                     ...task,
-                    taskName:newTaskName
+                    ...response.data
                 }
             }
             return task;

@@ -7,7 +7,7 @@ function TaskEdit({task,onSubmit}){
     }
     const handleSubmit = (event) =>{
         event.preventDefault();
-        onSubmit(task.taskId,newValue);
+        onSubmit(task.id,newValue);
     }
     return (
         <div className='edit-outer'>
