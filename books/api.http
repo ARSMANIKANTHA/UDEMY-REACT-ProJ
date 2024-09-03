@@ -1,0 +1,20 @@
+###GET REQUEST TO RETRIEVE DATA
+GET http://localhost:3001/books HTTP/1.1
+Content-Type: application/json
+### POST REQUEST TO ADD DATA
+POST  http://localhost:3001/books HTTP/1.1
+Content-Type: application/json
+
+{
+    "title":"book1"
+}
+### PUT REQUEST TO UPDATE DATA
+PUT  http://localhost:3001/books/1 HTTP/1.1
+Content-Type: application/json
+
+{
+    "title":"book-1"
+}
+### DELETE REQUEST TO DELETE DATA
+DELETE  http://localhost:3001/books/1 HTTP/1.1
+Content-Type: application/json
